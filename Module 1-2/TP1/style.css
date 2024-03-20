@@ -1,0 +1,166 @@
+body {
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    background-color: #EEEEEE;
+    min-height: 100vh;
+    font-family: Arial, sans-serif; /* Ajout d'une police de caractères par défaut */
+}
+
+.titre {
+    text-align: center;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Amélioration de l'ombre du texte */
+}
+
+.slider-container {
+    width: 100%;
+    position: relative;
+    margin: auto;
+    height: 350px;
+    overflow: hidden;
+    background-color: #D9D9D9;
+    border-width: 1px;
+    align-content: center;
+}
+
+.slider-text {
+    text-align: center;
+    font-size: 18px;
+}
+
+.menu {
+    position: absolute;
+    left: 0;
+    z-index: 11;
+    width: 100%;
+    bottom: 0;
+    text-align: center;
+}
+
+.menu label {
+    cursor: pointer;
+    display: inline-block;
+    width: 10px;
+    height: 10px;
+    background: #ccc;
+    border-radius: 50px;
+    margin: 0 0.2em 1em;
+}
+
+.menu label:hover, .menu label:focus {
+    background: #1c87c9;
+}
+
+.slide-input {
+    opacity: 0;
+}
+
+.slide-img {
+    margin-top: 15px;
+    width: 100%;
+    height: 300px;
+    max-width: 250px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 10;
+    transition: opacity 0.65s ease-out; /* Suppression de la transition inutile */
+    opacity: 0;
+    margin-bottom: 20px;
+}
+
+[id^="slide"]:checked + .slide-img {
+    opacity: 1;
+    cursor: pointer;
+}
+
+/* Media query pour les écrans de petite taille */
+@media screen and (max-width: 600px) {
+    .slider-container {
+        height: 250px; /* Réduction de la hauteur du slider pour les écrans plus petits */
+    }
+
+    .menu {
+        bottom: 10px; /* Ajout d'un espace entre le slider et les points de navigation */
+    }
+
+    .vignette {
+        width: 100%; /* Les vignettes occupent toute la largeur de l'écran */
+        max-width: 300px; /* Limitation de la largeur des vignettes pour éviter leur étalement */
+    }
+}
+
+.Vignettes {
+    margin-top: 5%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.vignette {
+    cursor: pointer;
+    width: 180px;
+    height: 300px;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    border: 1px solid #D9D9D9;
+    border-radius: 10%;
+    background-color: #D9D9D9;
+    margin: 2%;
+    padding: 10px;
+}
+
+.vignette img {
+    width: 100%;
+    height: 70%;
+    border-radius: 10%;
+}
+
+.caption {
+    margin-top: 5px;
+    font-size: 14px;
+    text-align: center;
+}
+
+/* HEADER*/
+header {
+    background-color: #EEEEEE;
+    display: flex;
+    justify-content: space-between; /* Distribution des éléments sur toute la largeur de l'en-tête */
+    align-items: center; /* Centrage vertical des éléments de l'en-tête */
+    height: 100px;
+    padding: 0 20px; /* Ajout de marges intérieures pour les éléments de l'en-tête */
+    box-sizing: border-box; /* Inclusion des marges intérieures dans la taille totale */
+}
+
+.img-header {
+    max-width: 100px; /* Ajustement de la taille du logo */
+    height: auto; /* Hauteur automatique en fonction de la largeur */
+}
+
+nav {
+    flex: 1; /* Le menu de navigation prend le maximum d'espace disponible */
+}
+
+ul {
+    display: flex;
+    justify-content: space-around;
+    list-style: none;
+    margin: 0; /* Suppression des marges par défaut */
+    padding: 0; /* Suppression des marges par défaut */
+}
+
+li {
+    cursor: pointer;
+}
+
+/*FOOTER*/
+
+footer {
+    text-align: center;
+    background-color: #C4C3C3;
+    padding: 20px;
+}
